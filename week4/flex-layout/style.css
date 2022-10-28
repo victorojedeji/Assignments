@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;700&family=Lexend+Deca:wght@100;200;300;400;500;600;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brightOrange: hsl(31, 77%, 52%);
+    --darkCyan: hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+    --mainFontSize: 15px;
+    --paraColor: hsla(0, 0%, 100%, 0.75);
+    --veryLightGray: hsl(0, 0%, 95%);
+    --borderRadius: .5em;
+}
+
+body {
+    font-size: var(--mainFontSize);
+}
+
+.main {
+    max-width: 1440px;
+    background: var(--veryLightGray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1rem;
+}
+
+.wrapper {
+    max-width: 50%;
+    display: flex;
+}
+
+.card {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .logo {
+    width: 30%;
+    margin-bottom: 1.2em;
+}
+
+.card .header {
+    color: var(--veryLightGray);
+    margin-bottom: 1em;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+.card .paragragh {
+    color: var(--paraColor);
+    margin-bottom: 4em;
+    font-weight: 400;
+    font-size: .86rem;
+    line-height: 1.6;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.card .btn {
+    padding: .7em 1.7em;
+    border-radius: 2em;
+    font-weight: 400;
+    font-size: .75rem;
+    font-family: 'Lexend Deca', sans-serif;
+    align-self: flex-start;
+    margin-top: auto;
+    border: 1px solid var(--veryLightGray);
+    background: transparent;
+    color: var(--veryLightGray);
+}
+
+.card.sedans {
+    background: var(--brightOrange);
+    border-top-left-radius: var(--borderRadius);
+    border-bottom-left-radius: var(--borderRadius);
+}
+
+.card.suvs {
+    background: var(--darkCyan);
+}
+
+.card.luxury {
+    background: var(--veryDarkCyan);
+    border-top-right-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+}
+
+@media (max-width: 375px) {
+    .main {
+        height: fit-content;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .card.sedans {
+        border-top-left-radius: var(--borderRadius);
+        border-top-right-radius: var(--borderRadius);
+        border-bottom-left-radius: 0;
+    }
+
+    .card.luxury {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: var(--borderRadius);
+        border-bottom-right-radius: var(--borderRadius);
+    }
+}
